@@ -5,47 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NFT Mint Watcher</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <header>
-        <h1>NFT Mint Watcher</h1>
-        <nav>
-            <button id="settingsBtn">Settings</button>
-            <button id="liveFeedBtn">Live Feed</button>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <header class="bg-green-600 text-white p-4">
+        <h1 class="text-2xl font-bold">NFT Mint Watcher</h1>
+        <nav class="mt-4">
+            <button id="settingsBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Settings</button>
+            <button id="liveFeedBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2">Live Feed</button>
         </nav>
-        <button id="themeToggle">Toggle Theme</button>
     </header>
 
-    <main>
+    <main class="container mx-auto mt-8">
         <section id="settings" class="view">
-            <h2>Settings</h2>
-            <form id="settingsForm">
-                <label for="chainName">Chain Name:</label>
-                <input type="text" id="chainName" name="chainName" required>
+            <h2 class="text-xl font-bold mb-4">Settings</h2>
+            <form id="settingsForm" class="max-w-md mx-auto">
+                <div class="mb-4">
+                    <label for="chainName" class="block mb-2">Chain Name:</label>
+                    <input type="text" id="chainName" name="chainName" required class="w-full px-3 py-2 border rounded">
+                </div>
 
-                <label for="blockExplorerPrefix">Block Explorer Prefix:</label>
-                <input type="text" id="blockExplorerPrefix" name="blockExplorerPrefix" required>
+                <div class="mb-4">
+                    <label for="blockExplorerPrefix" class="block mb-2">Block Explorer Prefix:</label>
+                    <input type="text" id="blockExplorerPrefix" name="blockExplorerPrefix" required class="w-full px-3 py-2 border rounded">
+                </div>
 
-                <label for="httpRpc">HTTP RPC:</label>
-                <input type="text" id="httpRpc" name="httpRpc" required>
+                <div class="mb-4">
+                    <label for="httpRpc" class="block mb-2">HTTP RPC:</label>
+                    <input type="text" id="httpRpc" name="httpRpc" required class="w-full px-3 py-2 border rounded">
+                </div>
 
-                <label for="wsRpc">WS RPC:</label>
-                <input type="text" id="wsRpc" name="wsRpc" required>
+                <div class="mb-4">
+                    <label for="wsRpc" class="block mb-2">WS RPC:</label>
+                    <input type="text" id="wsRpc" name="wsRpc" required class="w-full px-3 py-2 border rounded">
+                </div>
 
-                <button type="submit">Save Settings</button>
+                <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Save Settings</button>
             </form>
         </section>
 
         <section id="liveFeed" class="view hidden">
-            <h2>Live Feed</h2>
-            <div id="infoHeader">
-                <p>Current Block: <span id="currentBlock">-</span></p>
-                <p>Last Block: <span id="lastBlockTime">-</span></p>
+            <h2 class="text-xl font-bold mb-4">Live Feed</h2>
+            <div id="infoHeader" class="flex justify-between mb-4">
+                <p>Current Block: <span id="currentBlock" class="font-bold">-</span></p>
+                <p>Last Block: <span id="lastBlockTime" class="font-bold">-</span></p>
             </div>
-            <div id="eventTypeToggles"></div>
+            <div id="eventTypeToggles" class="flex flex-wrap justify-center mb-4"></div>
             <div id="eventsContainer"></div>
-            <div id="pagination">
+            <div id="pagination" class="flex justify-between items-center mt-4">
                 <div id="pageSizeContainer"></div>
                 <div id="paginationContainer"></div>
             </div>
@@ -53,6 +61,6 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
-    <script src="js/app.js?v=2"></script>
+    <script src="js/app.js?v=2" type="module"></script>
 </body>
 </html>

@@ -1,112 +1,183 @@
+/* Base styles */
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: #111827;
+    color: #f3f4f6;
 }
 
-.dark-mode {
-    background-color: #1a1a1a;
+/* Header styles */
+header {
+    background-color: #065f46;
+    color: #ffffff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+header nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Button styles */
+button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-blue {
+    background-color: #1d4ed8;
     color: #ffffff;
 }
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 1rem;
+.btn-blue:hover {
+    background-color: #1e40af;
 }
 
-nav {
-    margin-top: 1rem;
+.btn-green {
+    background-color: #059669;
+    color: #ffffff;
 }
 
-button {
-    background-color: #008CBA;
-    border: none;
-    color: white;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1rem;
-    margin: 0.25rem;
-    cursor: pointer;
-    border-radius: 4px;
+.btn-green:hover {
+    background-color: #047857;
 }
 
-.view {
-    padding: 1rem;
+.btn-gray {
+    background-color: #374151;
+    color: #d1d5db;
 }
 
-.hidden {
-    display: none;
+.btn-gray:hover {
+    background-color: #4b5563;
 }
 
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    background-color: #1f2937;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Form styles */
 form {
-    display: flex;
-    flex-direction: column;
-    max-width: 300px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
-label, input {
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
     margin-bottom: 0.5rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #4b5563;
+    border-radius: 0.25rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1f2937;
+    color: #f3f4f6;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.5);
+    outline: none;
+}
+
+/* Live Feed styles */
+#infoHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
 #eventTypeToggles {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    gap: 0.5rem;
     margin-bottom: 1rem;
-}
-
-#eventTypeToggles button {
-    background-color: #ddd;
-    color: #333;
-    opacity: 0.6;
-}
-
-#eventTypeToggles button.active {
-    opacity: 1;
-}
-
-#eventsContainer {
-    max-width: 800px;
-    margin: 0 auto;
 }
 
 .event {
-    border: 1px solid #ddd;
+    border: 1px solid #4b5563;
     padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 4px;
-    position: relative;
+    background-color: #374151;
+}
+
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
 }
 
 .event-type {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: bold;
     padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 9999px;
 }
 
-.erc20Transfer { background-color: rgba(255, 99, 132, 0.2); }
-.erc721Transfer { background-color: rgba(54, 162, 235, 0.2); }
-.erc1155Transfer { background-color: rgba(255, 206, 86, 0.2); }
-.erc20Mint { background-color: rgba(75, 192, 192, 0.2); }
-.erc721Mint { background-color: rgba(153, 102, 255, 0.2); }
-.erc1155Mint { background-color: rgba(255, 159, 64, 0.2); }
-.newErc20Contract { background-color: rgba(199, 199, 199, 0.2); }
-.newErc721Contract { background-color: rgba(83, 102, 255, 0.2); }
-.newErc1155Contract { background-color: rgba(255, 99, 132, 0.2); }
+.event-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
 
+.event-field {
+    display: flex;
+    justify-content: space-between;
+}
+
+.event-field-label {
+    font-weight: 600;
+}
+
+.event-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #60a5fa;
+    text-decoration: none;
+}
+
+.event-link:hover {
+    text-decoration: underline;
+}
+
+/* Pagination styles */
 #pagination {
     display: flex;
     justify-content: space-between;
@@ -114,34 +185,154 @@ label, input {
     margin-top: 1rem;
 }
 
-#pageSizeContainer button,
-#paginationContainer button {
-    background-color: #f1f1f1;
-    color: #333;
-    border: 1px solid #ddd;
+#pageSizeContainer,
+#paginationContainer {
+    display: flex;
+    gap: 0.5rem;
 }
 
-#paginationContainer button.active {
-    background-color: #4CAF50;
-    color: white;
+/* Event type colors */
+.erc20Transfer { background-color: #4c0519; color: #fecdd3; }
+.erc721Transfer { background-color: #172554; color: #bfdbfe; }
+.erc1155Transfer { background-color: #451a03; color: #fef3c7; }
+.erc20Mint { background-color: #064e3b; color: #a7f3d0; }
+.erc721Mint { background-color: #3b0764; color: #ddd6fe; }
+.erc1155Mint { background-color: #431407; color: #fed7aa; }
+.newErc20Contract { background-color: #1f2937; color: #f3f4f6; }
+.newErc721Contract { background-color: #1e1b4b; color: #c7d2fe; }
+.newErc1155Contract { background-color: #500724; color: #fce7f3; }
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        margin-top: 1rem;
+    }
+
+    #infoHeader {
+        flex-direction: column;
+    }
 }
 
-.dark-mode #eventTypeToggles button {
-    background-color: #444;
-    color: #fff;
+/* Button Styles */
+.btn {
+    padding: 8px 16px;
+    margin: 4px;
+    border: 2px solid #4a5568;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #4a5568;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
 }
 
-.dark-mode .event {
-    border-color: #444;
+.btn:hover {
+    background-color: #4a5568;
+    color: #ffffff;
 }
 
-.dark-mode #pageSizeContainer button,
-.dark-mode #paginationContainer button {
-    background-color: #333;
-    color: #fff;
-    border-color: #444;
+/* Event Type Toggle Buttons */
+.event-type-btn {
+    opacity: 0.6;
 }
 
-.dark-mode #paginationContainer button.active {
-    background-color: #4CAF50;
+.event-type-btn.active {
+    opacity: 1;
+    background-color: #4a5568;
+    color: #ffffff;
+}
+
+/* Pagination Buttons */
+.pagination-btn {
+    min-width: 40px;
+}
+
+.pagination-btn.active {
+    background-color: #4a5568;
+    color: #ffffff;
+}
+
+/* Page Size Buttons */
+.page-size-btn {
+    min-width: 60px;
+}
+
+.page-size-btn.active {
+    background-color: #4a5568;
+    color: #ffffff;
+}
+
+/* Event Styles */
+#eventsContainer {
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.event {
+    transition: background-color 0.2s;
+}
+
+.event:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.event-type {
+    font-weight: 500;
+}
+
+.font-mono {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.875rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.event-link {
+    color: #3182ce;
+    text-decoration: none;
+    text-align: center;
+}
+
+.event-link:hover {
+    text-decoration: underline;
+}
+
+/* View Sections */
+.view {
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Container Styles */
+#eventTypeToggles {
+    margin-bottom: 20px;
+}
+
+#pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#paginationContainer {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#pageSizeContainer {
+    display: flex;
+    gap: 4px;
 }
