@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Mint Watcher</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>NFT Mint Watcher</h1>
+        <nav>
+            <button id="settingsBtn">Settings</button>
+            <button id="liveFeedBtn">Live Feed</button>
+        </nav>
+        <button id="themeToggle">Toggle Theme</button>
+    </header>
+
+    <main>
+        <section id="settings" class="view">
+            <h2>Settings</h2>
+            <form id="settingsForm">
+                <label for="chainName">Chain Name:</label>
+                <input type="text" id="chainName" name="chainName" required>
+
+                <label for="blockExplorerPrefix">Block Explorer Prefix:</label>
+                <input type="text" id="blockExplorerPrefix" name="blockExplorerPrefix" required>
+
+                <label for="httpRpc">HTTP RPC:</label>
+                <input type="text" id="httpRpc" name="httpRpc" required>
+
+                <label for="wsRpc">WS RPC:</label>
+                <input type="text" id="wsRpc" name="wsRpc" required>
+
+                <button type="submit">Save Settings</button>
+            </form>
+        </section>
+
+        <section id="liveFeed" class="view hidden">
+            <h2>Live Feed</h2>
+            <div id="infoHeader">
+                <p>Current Block: <span id="currentBlock">-</span></p>
+                <p>Last Block: <span id="lastBlockTime">-</span></p>
+            </div>
+            <div id="eventTypeToggles"></div>
+            <div id="eventsContainer"></div>
+            <div id="pagination">
+                <div id="pageSizeContainer"></div>
+                <div id="paginationContainer"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script src="js/app.js?v=2"></script>
+</body>
+</html>

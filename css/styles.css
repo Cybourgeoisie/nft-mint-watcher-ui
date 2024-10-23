@@ -1,0 +1,147 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0.25rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.view {
+    padding: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+label, input {
+    margin-bottom: 0.5rem;
+}
+
+#eventTypeToggles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+#eventTypeToggles button {
+    background-color: #ddd;
+    color: #333;
+    opacity: 0.6;
+}
+
+#eventTypeToggles button.active {
+    opacity: 1;
+}
+
+#eventsContainer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.event {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    position: relative;
+}
+
+.event-type {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.erc20Transfer { background-color: rgba(255, 99, 132, 0.2); }
+.erc721Transfer { background-color: rgba(54, 162, 235, 0.2); }
+.erc1155Transfer { background-color: rgba(255, 206, 86, 0.2); }
+.erc20Mint { background-color: rgba(75, 192, 192, 0.2); }
+.erc721Mint { background-color: rgba(153, 102, 255, 0.2); }
+.erc1155Mint { background-color: rgba(255, 159, 64, 0.2); }
+.newErc20Contract { background-color: rgba(199, 199, 199, 0.2); }
+.newErc721Contract { background-color: rgba(83, 102, 255, 0.2); }
+.newErc1155Contract { background-color: rgba(255, 99, 132, 0.2); }
+
+#pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+#pageSizeContainer button,
+#paginationContainer button {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+#paginationContainer button.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.dark-mode #eventTypeToggles button {
+    background-color: #444;
+    color: #fff;
+}
+
+.dark-mode .event {
+    border-color: #444;
+}
+
+.dark-mode #pageSizeContainer button,
+.dark-mode #paginationContainer button {
+    background-color: #333;
+    color: #fff;
+    border-color: #444;
+}
+
+.dark-mode #paginationContainer button.active {
+    background-color: #4CAF50;
+}
